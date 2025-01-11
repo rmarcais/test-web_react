@@ -1,6 +1,6 @@
 namespace Subjects {
     export interface Teacher {
-        experienceTeachingC: number;
+        experienceTeachingC?: number;
     }
 
     export class Cpp extends Subject {
@@ -9,7 +9,7 @@ namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            if (this.teacher.experienceTeachingC > 0)
+            if ((this.teacher.experienceTeachingC ?? 0) > 0)
                 return "Available Teacher: " + this.teacher.firstName;
 
             return "No available teacher";
